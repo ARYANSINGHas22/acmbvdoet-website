@@ -1,50 +1,16 @@
-# acmbvdoet-website
-# ACM BVDOET Student Chapter 🌐
+# React + Vite
 
-Welcome to the **official repository** of the **ACM BVDOET Student Chapter**.  
-This project hosts the source code for our chapter’s website, built and maintained by the ACM community at **Bharati Vidyapeeth (Deemed to be University), Department of Engineering & Technology (BVDOET)**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Our goal is to create a collaborative platform that showcases:
-- ACM events & activities
-- Coding competitions (DSA, CP, CTFs)
-- Technical blogs & resources
-- Chapter leadership & members
-- Live leaderboards and announcements
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Tech Stack
+## React Compiler
 
-- **Frontend:** React (Vite)
-- **Styling:** CSS / Tailwind CSS
-- **Backend (optional):** Firebase / Node.js
-- **Hosting:** GitHub Pages / Vercel
-- **Version Control:** Git & GitHub
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-> The stack is kept beginner-friendly to encourage student contributions.
+## Expanding the ESLint configuration
 
----
-
-## 📂 Project Structure
-
-```txt
-acm-bvdoet-website/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
-│   ├── services/
-│   ├── styles/
-│   ├── utils/
-│   ├── App.jsx
-│   └── main.jsx
-├── docs/
-│   ├── CONTRIBUTING.md
-│   ├── CODE_OF_CONDUCT.md
-│   └── ARCHITECTURE.md
-├── .github/
-├── .env.example
-├── .gitignore
-├── README.md
-└── package.json
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
