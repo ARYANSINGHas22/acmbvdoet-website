@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Landing from './component/Landing'
+import About from './component/About';
+import Events from './component/Events';
+import Team from './component/Team';
+import Landing from './component/Landing';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/team" element={<Team />} />
       </Routes>
     </BrowserRouter>
   )
