@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
-
+// added this things
 const Team = () => {
     return (
         <div className="bg-white text-slate-800 min-h-screen font-sans">
@@ -38,7 +38,7 @@ const Team = () => {
                             MEET THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-700">ARCHITECTS</span>
                         </h1>
                         <p className="text-slate-600 text-lg leading-relaxed">
-                            The dedicated team of faculty mentors and student leaders driving excellence in computer science and technology at the ACM BVDUDET Student Chapter.
+                            The dedicated team of faculty mentors and student leaders driving excellence in CS and technology at the ACM BVDUDET Student Chapter.
                         </p>
                     </div>
                 </div>
