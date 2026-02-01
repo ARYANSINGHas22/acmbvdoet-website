@@ -25,7 +25,7 @@ const Landing = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-          <a href="#" className="text-sky-500 hover:text-sky-600">Home</a>
+          <a href="/" className="text-sky-500 hover:text-sky-600">Home</a>
           <a href="/about" className="hover:text-sky-600">About</a>
           <a href="/events" className="hover:text-sky-600">Events</a>
           <a href="/team" className="hover:text-sky-600">Team</a>

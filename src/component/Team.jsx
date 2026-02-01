@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
-// added this things
+
 const Team = () => {
     return (
         <div className="bg-white text-slate-800 min-h-screen font-sans">
