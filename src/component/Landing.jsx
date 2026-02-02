@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Calendar,
   Users,
@@ -12,6 +12,42 @@ import {
 } from 'lucide-react';
 
 const Landing = () => {
+  const heroImages = [
+    '/home3.jpg',
+    '/home2.jpg',
+    '/home.jpg'
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => prevIndex + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (currentImageIndex === heroImages.length) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentImageIndex(0);
+        // Small delay to ensure render cycle catches the change before re-enabling transition
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setIsTransitioning(true);
+          });
+        });
+      }, 1000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentImageIndex]);
+
+  const displayImages = [...heroImages, heroImages[0]];
+
   return (
     <div className="w-full min-h-screen bg-white font-sans text-slate-800">
 
@@ -44,30 +80,52 @@ const Landing = () => {
 
       {/* --- Hero Section --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="bg-sky-50 rounded-[2.5rem] p-12 md:p-24 text-center">
-
-          <div className="inline-block bg-white px-3 py-1 rounded-full mb-6 shadow-sm border border-sky-100">
-            <span className="text-xs font-bold text-sky-500 uppercase tracking-wider">♥ Academic Chapter 2024-25</span>
+        <div className="relative bg-sky-50 rounded-[2.5rem] p-12 md:p-24 text-center overflow-hidden">
+          {/* Image Slider Background */}
+          <div className="absolute inset-0 z-0 overflow-hidden rounded-[2.5rem]">
+            <div
+              className="flex h-full w-full will-change-transform transform-gpu"
+              style={{
+                transform: `translateX(-${currentImageIndex * 100}%)`,
+                transition: isTransitioning ? 'transform 1000ms ease-in-out' : 'none'
+              }}
+            >
+              {displayImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="min-w-full h-full bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url('${img}')`,
+                    opacity: 0.4
+                  }}
+                ></div>
+              ))}
+            </div>
           </div>
+          <div className="relative z-10">
+            <div className="inline-block bg-white px-3 py-1 rounded-full mb-6 shadow-sm border border-sky-100">
+              <span className="text-xs font-bold text-sky-700 uppercase tracking-wider">♥ Academic Chapter 2024-25</span>
+            </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">
-            ACM Student <br /> Chapter
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-sky-500 italic mb-8">
-            BVDU DET, Navi <br /> Mumbai
-          </h2>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">
+              ACM Student <br /> Chapter
+            </h1>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-sky-700 italic mb-8">
+              BVDU DET, Navi <br /> Mumbai
+            </h2>
 
-          <p className="max-w-2xl mx-auto text-slate-600 mb-10 text-sm md:text-base leading-relaxed">
-            Empowering the next generation of computing professionals through collaboration, innovation, and technical excellence.
-          </p>
+            <p className="max-w-2xl mx-auto text-slate-800 mb-10 text-sm md:text-base leading-relaxed">
+              Empowering the next generation of computing professionals through collaboration, innovation, and technical excellence.
+            </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-sky-200 transition-all">
-              Stay Updated - Join Our Discord
-            </button>
-            <a href="/events" className="bg-white hover:bg-gray-50 text-sky-600 border border-sky-100 px-8 py-3 rounded-xl font-semibold shadow-sm transition-all flex items-center justify-center">
-              View Events
-            </a>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-sky-200 transition-all">
+                Stay Updated - Join Our Discord
+              </button>
+              <a href="/events" className="bg-white hover:bg-gray-50 text-sky-700 border border-sky-100 px-8 py-3 rounded-xl font-semibold shadow-sm transition-all flex items-center justify-center">
+                View Events
+              </a>
+            </div>
           </div>
         </div>
       </div>
