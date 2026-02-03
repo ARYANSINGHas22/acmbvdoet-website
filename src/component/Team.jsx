@@ -4,32 +4,6 @@ import { Menu } from 'lucide-react';
 const Team = () => {
     return (
         <div className="bg-white text-slate-800 min-h-screen font-sans">
-            {/* --- Navbar --- */}
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                {/* Logo Area */}
-                <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-sky-500 rounded text-white flex items-center justify-center font-bold">A</div>
-                    <span className="font-bold text-sky-600 text-lg tracking-tight">ACM BVDU DET</span>
-                </div>
-
-                {/* Desktop Links */}
-                <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-                    <a href="/" className="hover:text-sky-600">Home</a>
-                    <a href="/about" className="hover:text-sky-600">About</a>
-                    <a href="/events" className="hover:text-sky-600">Events</a>
-                    <a href="/team" className="text-sky-500 hover:text-sky-600">Team</a>
-                </div>
-
-                {/* CTA Button */}
-                <button className="hidden md:block bg-sky-500 hover:bg-sky-600 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">
-                    Join Discord
-                </button>
-
-                {/* Mobile Menu Icon */}
-                <button className="md:hidden text-slate-600">
-                    <Menu size={24} />
-                </button>
-            </nav>
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="mb-16">
                     <div className="flex flex-col gap-4 max-w-3xl">

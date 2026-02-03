@@ -4,32 +4,6 @@ import { Menu } from 'lucide-react';
 const Events = () => {
     return (
         <div className="bg-white text-slate-900 font-[Manrope]">
-            {/* --- Navbar --- */}
-            <nav className="font-sans max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                {/* Logo Area */}
-                <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-sky-500 rounded text-white flex items-center justify-center font-bold">A</div>
-                    <span className="font-bold text-sky-600 text-lg tracking-tight">ACM BVDU DET</span>
-                </div>
-
-                {/* Desktop Links */}
-                <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-                    <a href="/" className="hover:text-sky-600">Home</a>
-                    <a href="/about" className="hover:text-sky-600">About</a>
-                    <a href="/events" className="text-sky-500 hover:text-sky-600">Events</a>
-                    <a href="/team" className="hover:text-sky-600">Team</a>
-                </div>
-
-                {/* CTA Button */}
-                <button className="hidden md:block bg-sky-500 hover:bg-sky-600 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">
-                    Join Discord
-                </button>
-
-                {/* Mobile Menu Icon */}
-                <button className="md:hidden text-slate-600">
-                    <Menu size={24} />
-                </button>
-            </nav>
             <main>
                 <section className="relative overflow-hidden bg-white py-24 md:py-32">
                     <div className="absolute inset-0 grid-pattern pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #0ea5e9 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.05 }}></div>
